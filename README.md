@@ -1,5 +1,5 @@
 # Openbrainrot 😂
-<img src="https://github.com/user-attachments/assets/e011f1e1-4e35-4826-b151-25e8578ea520" width="200" />
+<img src="https://github.com/user-attachments/assets/5d430ec4-aab4-4587-9479-d12000468794" width="400" />
 
 Automate the creation of brainrot clips, simply by providing a video topic to talk about.
 
