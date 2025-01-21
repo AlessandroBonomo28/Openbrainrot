@@ -1,7 +1,7 @@
 # Openbrainrot 😂
-<img src="https://github.com/user-attachments/assets/5d430ec4-aab4-4587-9479-d12000468794" width="400" />
-
 Automate the creation of brainrot clips, simply by providing a video topic to talk about.
+
+<img src="https://github.com/user-attachments/assets/5d430ec4-aab4-4587-9479-d12000468794" width="400" class="justify-center" />
 
 > **🎥** Watch the video on my [YouTube channel](https://www.youtube.com/@coding.emojii).
 
