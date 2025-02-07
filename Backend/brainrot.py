@@ -2,8 +2,9 @@ import os
 from utils import *
 from dotenv import load_dotenv
 import random
+from youtube import simple_upload_video
 import shutil
-
+from time import sleep
 
 # Load environment variables
 load_dotenv("../.env")
@@ -35,7 +36,7 @@ CORS(app)
 
 # Constants
 HOST = "0.0.0.0"
-PORT = 8080
+PORT = 8081
 GENERATING = False
 
 
@@ -183,17 +184,60 @@ def generate():
 
         # Define metadata for the video, we will display this to the user, and use it for the YouTube upload
         title, description, keywords = generate_metadata(data["videoSubject"], script, ai_model)
-        tmp = data["videoSubject"]
-        title = f"{tmp} 🤔"
+        subject = data["videoSubject"]
+        title = f"{subject}? SKIBIDI QUIZ 🚽🤯"
         print(colored("[-] Metadata for upload:", "blue"))
         print(colored("   Title: ", "blue"))
         print(colored(f"   {title}", "blue"))
         print(colored("   Description: ", "blue"))
         print(colored(f"   {description}", "blue"))
         print(colored("   Keywords: ", "blue"))
-        print(colored(f"  {', '.join(keywords)}", "blue"))
+        #print(colored(f"  {', '.join(keywords)}", "blue"))
+        short_hash = "#memes #meme #brainrot #funnymemes #shorts"
+        short_tags = f"memes,brainrot,funny,meme,{subject}"
+        print(colored(short_tags, "blue"))
+        if automate_youtube_upload:
+            # Start Youtube Uploader
+            # Check if the CLIENT_SECRETS_FILE exists
+            client_secrets_file = os.path.abspath("./client_secret.json")
+            SKIP_YT_UPLOAD = False
+            if not os.path.exists(client_secrets_file):
+                SKIP_YT_UPLOAD = True
+                print(colored("[-] Client secrets file missing. YouTube upload will be skipped.", "yellow"))
+                print(colored("[-] Please download the client_secret.json from Google Cloud Platform and store this inside the /Backend directory.", "red"))
 
-       
+            # Only proceed with YouTube upload if the toggle is True  and client_secret.json exists.
+            if not SKIP_YT_UPLOAD:
+                # Choose the appropriate category ID for your videos
+                video_category_id = "24"  # Entertainment
+                privacyStatus = "public"  # "public", "private", "unlisted"
+                
+                yt_title = title 
+                yt_title = yt_title[:99]
+                yt_desc = description + " "+short_hash
+                video_metadata = {
+                    'video_path': os.path.abspath(f"../temp/{final_video_path}"),
+                    'title': yt_title,
+                    'description': yt_desc,
+                    'category': video_category_id,
+                    'keywords': ",".join(keywords),
+                    'privacyStatus': privacyStatus,
+                }
+
+                # Upload the video to YouTube
+                try:
+                    # Unpack the video_metadata dictionary into individual arguments
+                    video_response = simple_upload_video(
+                        video_path=video_metadata['video_path'],
+                        title=video_metadata['title'],
+                        description=video_metadata['description'],
+                        category=video_metadata['category'],
+                        keywords=video_metadata['keywords'],
+                        privacy_status=video_metadata['privacyStatus']
+                    )
+                    print("Uploaded video!!")
+                except HttpError as e:
+                    print(f"An HTTP error {e.resp.status} occurred:\n{e.content}")
 
         video_clip = VideoFileClip(f"../temp/{final_video_path}")
         
