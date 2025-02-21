@@ -255,3 +255,41 @@ def generate_video(combined_video_path: str, tts_path: str, subtitles_path: str,
     result.write_videofile("../temp/output.mp4", threads=threads or 2,codec="libx264", audio_codec="aac")
     
     return "output.mp4"
+
+from moviepy.editor import VideoFileClip, ImageClip, CompositeVideoClip
+
+def make_meme(video_path: str, image_path: str, output_path: str, scale_factor: float = 0.5) -> str:
+    """
+    Merges an image with a video, centers and scales the image, and saves the final video.
+
+    Args:
+        video_path (str): Path to the video file.
+        image_path (str): Path to the image file to overlay on the video.
+        output_path (str): Path where the final video will be saved.
+        scale_factor (float): The scale factor to resize the image (default is 0.5).
+
+    Returns:
+        str: The path to the final video.
+    """
+    # Load the video clip
+    video_clip = VideoFileClip(video_path)
+    
+    # Load the image and scale it
+    image_clip = ImageClip(image_path)
+    scaled_h = video_clip.h * scale_factor  
+    scaled_w = video_clip.w * scale_factor 
+    if image_clip.h > image_clip.w:
+        image_clip = image_clip.resize(width=(scaled_w*0.75),height=scaled_h)
+    else:
+        image_clip = image_clip.resize(width=(video_clip.w *0.75))
+    
+    # Set the position of the image (center it)
+    #image_clip = image_clip.set_position((video_clip.w//2 - scaled_w//2,20)).set_duration(video_clip.duration)
+    image_clip = image_clip.set_position('center').set_duration(video_clip.duration)
+    # Create the composite video with the image overlaying the video
+    final_clip = CompositeVideoClip([video_clip, image_clip])
+    
+    # Write the final video to the specified output path
+    final_clip.write_videofile(output_path, codec="libx264", audio_codec="aac")
+    
+    return output_path

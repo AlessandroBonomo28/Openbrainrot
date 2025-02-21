@@ -21,3 +21,5 @@ env/
 temp/
 Backend/persistent.json
 output.mp4
+meme.mp4
+token.pickle

@@ -104,3 +104,41 @@ Videos are uploaded as private by default. For a completely automated workflow, 
 
 For videos that have been locked as private due to upload via an unverified API service, you will not be able to appeal. You’ll need to re-upload the video via a verified API service or via the YouTube app/site. The unverified API service can also apply for an API audit. So make sure to verify your API, see [OAuth App Verification Help Center](https://support.google.com/cloud/answer/13463073) for more information.
 
+## Reddit meme uploader
+I added a script that allows you to create shorts using memes scraped from reddit.
+
+In order to run this you will need a reddit account. After you get the API key associated to your account, the first time that you run the script, you'll be asked to insert your `client_id` and `client_secret` (the other fields you can enter whatever you want, they are not important). After you insert your api key details the script will create a `token.pickle` (it's important that you **run the script inside /Backend folder** so that the token pickle will be created inside it).  
+
+```
+python reddit_meme_uploader.py
+```
+
+The script will download memes from reddit and combine them with a random video selected from folder `reddit_scraper/meme_bg`. By default the variable `UPLOAD_TO_YOUTUBE` is set to `False`. Configure Youtube Automation (follow my tutorial on yt) and then set it to `True` to automatically upload on youtube.
+
+> **🎥** Watch the video tutorial series on my [YouTube channel](https://www.youtube.com/@coding.emojii).
+
+Check out the **detailed instructions to get the REDDIT API KEY** [here](reddit_scraper/README.md).
+
+## run in loop with systemctl service on linux
+- create service file
+```
+sudo nano /etc/systemd/system/brainrot.service
+
+Now paste content of file brainrot.service
+```
+- Now enable the service:
+```
+sudo systemctl enable brainrot.service 
+```
+- reload deamon
+```
+sudo systemctl daemon-reload
+```
+- start/restart/stop/status service 
+```
+sudo systemctl [start/restart/stop/status] brainrot.service
+```
+- check output
+```
+journalctl -f -u ai.service
+```

@@ -1,0 +1,12 @@
+[Unit]
+Description=brainrot
+After=network.target
+
+[Service]
+User=max
+WorkingDirectory=/home/username/openbrainrot
+ExecStart=/bin/bash /home/username/openbrainrot/run.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
