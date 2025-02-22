@@ -117,7 +117,7 @@ The script will download memes from reddit and combine them with a random video 
 
 > **🎥** Watch the video tutorial series on my [YouTube channel](https://www.youtube.com/@coding.emojii).
 
-Check out the **detailed instructions to get the REDDIT API KEY** [here](reddit_scraper/README.md).
+Check out the **detailed instructions to get the REDDIT API KEY** [here](https://github.com/AlessandroBonomo28/Openbrainrot/tree/master/Backend/reddit_scraper/README.md).
 
 ## run in loop with systemctl service on linux
 - create service file
