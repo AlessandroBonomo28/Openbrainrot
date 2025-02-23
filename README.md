@@ -72,9 +72,9 @@ sudo make install
 IMAGEMAGICK_BINARY="/usr/local/bin/magick"
 ```
 ## ⚠️ Raspberry notes ⚠️
-I tried installing it on raspberry pi zero W **(32 bit)**. The installation
+I tried installing it on raspberry pi zero W **(32 bit)** but didn't work. The installation
 is overall **SLOW**. OpenCV takes **10h to install** and imagemagick takes a lot
-of time to compile. **I suggest to use pi4 or pi5**
+of time to compile. **I suggest to use pi4 or pi5 (64 bit)**
 #### Alternative way to download imagemagick on pi
 ```
 sudo apt-get install imagemagick
