@@ -8,7 +8,7 @@ from youtube import simple_upload_video
 load_dotenv("../.env")
 # Check if all required environment variables are set
 # This must happen before importing video which uses API keys without checking
-check_env_vars()
+#check_env_vars()
 
 
 from video import make_meme
@@ -26,10 +26,18 @@ POST_SEARCH_AMOUNT = 50
 UPLOAD_TO_YOUTUBE = False 
 SLEEP_SEC_BETWEEN_UPLOADS = 60*60*32
 
+
+# Create directory if it doesn't exist to save images
+def create_folder(image_path):
+    CHECK_FOLDER = os.path.isdir(image_path)
+    # If folder doesn't exist, then create it.
+    if not CHECK_FOLDER:
+        os.makedirs(image_path)
+
 dir_path = os.path.dirname(os.path.realpath(__file__))
 image_path = os.path.join(dir_path, "reddit_scraper/images/")
 ignore_path = os.path.join(dir_path, "reddit_scraper/ignore_images/")
-
+create_folder(image_path)
 def download_memes(reddit_client): 
     f_final = open("reddit_scraper/sub_list.csv", "r")
     #img_notfound = cv2.imread('./ignore_images/imageNF.png')
