@@ -156,3 +156,37 @@ sudo systemctl [start/restart/stop/status] brainrot.service
 ```
 journalctl -f -u ai.service
 ```
+## chrome config
+start fake output display 
+```
+export DISPLAY=:1
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+Xvfb :1 -screen 0 1024x768x16 &
+```
+connect with putty + xming. see https://www.youtube.com/watch?v=-oanqpf0xak
+
+
+Open google-chrome script using the following command:
+
+`nano /opt/google/chrome/google-chrome`
+
+`exec -a "$0" "$HERE/chrome" "$@" --no-sandbox --window-size=500,500`
+
+### fix ERROR on llibffi6 
+```
+wget https://mirrors.kernel.org/ubuntu/pool/main/libf/libffi/libffi6_3.2.1-8_amd64.deb
+sudo apt install ./libffi6_3.2.1-8_amd64.deb
+```
+
+- install chrome
+```
+sudo apt-get install libxss1 libappindicator1 libindicator7
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome*.deb
+```
+- install Xvfb
+```
+sudo apt-get install -y xvfb
+sudo apt-get -y install xorg xvfb gtk2-engines-pixbuf
+sudo apt-get -y install dbus-x11 xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic xfonts-scalable
+```

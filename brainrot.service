@@ -3,7 +3,7 @@ Description=brainrot
 After=network.target
 
 [Service]
-User=max
+User=username
 WorkingDirectory=/home/username/openbrainrot
 ExecStart=/bin/bash /home/username/openbrainrot/run.sh
 Restart=always
