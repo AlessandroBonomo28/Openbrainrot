@@ -59,7 +59,7 @@ def generate_video(video_subject, ai_model, voice, paragraph_number, youtube_upl
         return False
 
 def generate_subject_and_prompt_gemini():
-    model = genai.GenerativeModel('gemini-pro')
+    model = genai.GenerativeModel('gemini-1.5-pro')
     prompt ="""
     generate a subject about anything. The subject MUST BE A SINGLE WORD or a well known curiosity.
     
