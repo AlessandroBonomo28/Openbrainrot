@@ -1,6 +1,6 @@
 # Environment Variables
 
-## Required
+
 
 - TIKTOK_SESSION_ID: Your TikTok session ID is required. Obtain it by logging into TikTok in your browser and copying the value of the `sessionid` cookie.
 

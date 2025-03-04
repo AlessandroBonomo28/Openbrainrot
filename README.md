@@ -5,6 +5,8 @@ Automate the creation of brainrot clips, simply by providing a video topic to ta
 
 > **🎥** Watch the video on my [YouTube channel](https://www.youtube.com/@coding.emojii).
 
+> Discord for help: click here (https://discord.gg/dDeZuKub)
+
 Check out the **instructions for running locally** [here](Local.md).
 
 ## FAQ 🤔
