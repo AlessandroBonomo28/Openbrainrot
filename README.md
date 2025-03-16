@@ -123,7 +123,7 @@ For videos that have been locked as private due to upload via an unverified API 
 ## Reddit meme uploader
 I added a script that allows you to create shorts using memes scraped from reddit.
 
-In order to run this you will need a reddit account. After you get the API key associated to your account, the first time that you run the script, you'll be asked to insert your `client_id` and `client_secret` (the other fields you can enter whatever you want, they are not important). After you insert your api key details the script will create a `token.pickle` (it's important that you **run the script inside /Backend folder** so that the token pickle will be created inside it).  
+In order to run this you will need a reddit account. After you get the API key associated to your account, the first time that you run the script, you'll be asked to insert your `client_id` and `client_secret` (the other fields you can enter 'agent' as agent and leave blan user and password, they are not important). After you insert your api key details the script will create a `token.pickle` (it's important that you **run the script inside /Backend folder** so that the token pickle will be created inside it).  
 
 ```
 python reddit_meme_uploader.py
