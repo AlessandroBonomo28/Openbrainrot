@@ -3,7 +3,7 @@ Automate the creation of brainrot clips, simply by providing a video topic to ta
 
 <img src="https://github.com/user-attachments/assets/5d430ec4-aab4-4587-9479-d12000468794" width="350"  />
 
-> **🎥** Watch the video on my [YouTube channel](https://www.youtube.com/@coding.emojii).
+> **🎥** Watch the video on my [YouTube channel](https://www.youtube.com/@home.made_tech).
 
 > Discord for help: click here (https://discord.gg/6PzdMY5KeW)
 
