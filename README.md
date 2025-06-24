@@ -1,9 +1,9 @@
-# Openbrainrot 😂
+![image](https://github.com/user-attachments/assets/9f432c33-f733-426e-9966-37fe8b29d2c8)# Openbrainrot 😂
 Automate the creation of brainrot clips, simply by providing a video topic to talk about.
 
 <img src="https://github.com/user-attachments/assets/5d430ec4-aab4-4587-9479-d12000468794" width="350"  />
 
-> **🎥** Watch the video on my [YouTube channel](https://www.youtube.com/@home_baked_tech).
+> **🎥** Watch the video on my [YouTube channel](https://www.youtube.com/@italian.programmer).
 
 > Discord for help: click here (https://discord.gg/6PzdMY5KeW)
 
