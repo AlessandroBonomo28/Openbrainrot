@@ -10,6 +10,9 @@ Automate the creation of brainrot clips, simply by providing a video topic to ta
 Check out the **instructions for running locally** [here](Local.md).
 
 ## FAQ 🤔
+### do I need Assembly AI api key?
+
+no, if not set, subtitles are generated locally
 
 ### How do I replace the default background clips?
 
