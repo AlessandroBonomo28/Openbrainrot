@@ -12,7 +12,7 @@ Check out the **instructions for running locally** [here](Local.md).
 ## FAQ 🤔
 ### do I need Assembly AI api key?
 
-no, if not set, subtitles are generated locally
+no, if not set, subtitles are generated locally but poorly. Assembly AI api key is advised
 
 ### How do I replace the default background clips?
 
