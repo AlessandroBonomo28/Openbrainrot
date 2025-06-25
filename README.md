@@ -42,6 +42,8 @@ pip install -U wheel
 pip install -U playsound
 ```
 
+*Note* you can generate subtitles locally instead of using  ASSEMBLY API KEY  (if you have generated sentences with TTS), check file video.py, function "generate_subtitles"
+
 If you were not able to find your solution, please ask in the discord or create a new issue, so that the community can help you.
 
 ## Donate 🎁
